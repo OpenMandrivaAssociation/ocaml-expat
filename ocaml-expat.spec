@@ -1,7 +1,6 @@
 %define name	ocaml-expat
 %define version	0.9.1
-%define release	%mkrel 3
-%define ocaml_sitelib %(if [ -x /usr/bin/ocamlc ]; then ocamlc -where;fi)/site-lib
+%define release	%mkrel 4
 
 Name:		%{name}
 Version:	%{version}
@@ -26,6 +25,7 @@ needing to load the entire XML-Tree into memory.
 Summary:	Development files for %{name}
 Group:		Development/Other
 Requires:	expat-devel
+Requires:	%{name} = %{version}-%{release}
 
 %description devel
 This package contains the development files needed to build applications
@@ -49,8 +49,14 @@ rm -f %{buildroot}/%{ocaml_sitelib}/stublibs/*.owner
 %clean
 rm -rf %{buildroot}
 
-%files devel
+%files
 %defattr(-,root,root)
 %doc LICENCE README doc
-%{ocaml_sitelib}/expat
+%dir %{ocaml_sitelib}/expat
+%{ocaml_sitelib}/expat/*.cmi
+
+%files devel
+%defattr(-,root,root)
+%{ocaml_sitelib}/expat/*
+%exclude %{ocaml_sitelib}/expat/*.cmi
 %{ocaml_sitelib}/stublibs/dllmlexpat.so
