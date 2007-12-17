@@ -14,7 +14,6 @@ Patch0:		%{name}-%{version}-destdir.patch
 BuildRequires:	ocaml
 BuildRequires:	expat-devel
 BuildRequires:  findlib
-BuildRoot:	%{_tmppath}/%{name}-%{version}
 
 %description
 An ocaml wrapper for the Expat XML parsing library. It allows you to write
