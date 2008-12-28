@@ -1,6 +1,6 @@
 %define name	ocaml-expat
 %define version	0.9.1
-%define release	%mkrel 7
+%define release	%mkrel 8
 
 Name:		%{name}
 Version:	%{version}
@@ -10,10 +10,9 @@ License:	GPL
 Group:		Development/Other
 URL:		http://www.xs4all.nl/~mmzeeman/ocaml
 Source0: 	http://www.xs4all.nl/~mmzeeman/ocaml/%{name}-%{version}.tar.bz2
-Patch0:		%{name}-%{version}-destdir.patch
 BuildRequires:	ocaml
+BuildRequires:  ocaml-findlib
 BuildRequires:	expat-devel
-BuildRequires:  findlib
 BuildRoot:	%{_tmppath}/%{name}-%{version}
 
 %description
@@ -33,7 +32,6 @@ using %{name}.
 
 %prep
 %setup -q -n %{name}-%{version}
-%patch
 
 %build
 %make depend
@@ -41,10 +39,9 @@ using %{name}.
 
 %install
 rm -rf %{buildroot}
-install -d -m 755 %{buildroot}/%{ocaml_sitelib}
-install -d -m 755 %{buildroot}/%{ocaml_sitelib}/stublibs
-make install OCAMLFIND_INSTFLAGS="-destdir %{buildroot}/%{ocaml_sitelib}"
-rm -f %{buildroot}/%{ocaml_sitelib}/stublibs/*.owner
+install -d -m 755 %{buildroot}/%{_libdir}/ocaml/stublibs
+make install OCAMLFIND_DESTDIR="%{buildroot}%{_libdir}/ocaml"
+rm -f %{buildroot}/%{_libdir}/ocaml/stublibs/*.owner
 
 %clean
 rm -rf %{buildroot}
@@ -52,11 +49,14 @@ rm -rf %{buildroot}
 %files
 %defattr(-,root,root)
 %doc LICENCE README doc
-%dir %{ocaml_sitelib}/expat
-%{ocaml_sitelib}/expat/*.cmi
+%dir %{_libdir}/ocaml/expat
+%{_libdir}/ocaml/expat/*.cmi
+%{_libdir}/ocaml/expat/*.cma
+%{_libdir}/ocaml/expat/META
+%{_libdir}/ocaml/stublibs/*.so
 
 %files devel
 %defattr(-,root,root)
-%{ocaml_sitelib}/expat/*
-%exclude %{ocaml_sitelib}/expat/*.cmi
-%{ocaml_sitelib}/stublibs/dllmlexpat.so
+%{_libdir}/ocaml/expat/*.a
+%{_libdir}/ocaml/expat/*.cmxa
+%{_libdir}/ocaml/expat/*.mli
