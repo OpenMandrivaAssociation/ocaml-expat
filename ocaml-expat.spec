@@ -1,6 +1,6 @@
 %define name	ocaml-expat
 %define version	0.9.1
-%define release	%mkrel 8
+%define release	%mkrel 9
 
 Name:		%{name}
 Version:	%{version}
