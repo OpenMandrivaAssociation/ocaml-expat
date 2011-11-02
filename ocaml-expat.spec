@@ -2,9 +2,9 @@
 %define version	0.9.1
 %define release	%mkrel 9
 
-Name:		%{name}
-Version:	%{version}
-Release:	%{release}
+Name:		ocaml-expat
+Version:	0.9.1
+Release:	10
 Summary:	Ocaml wrapper for the Expat XML parsing library
 License:	GPL
 Group:		Development/Other
@@ -13,7 +13,6 @@ Source0: 	http://www.xs4all.nl/~mmzeeman/ocaml/%{name}-%{version}.tar.bz2
 BuildRequires:	ocaml
 BuildRequires:  ocaml-findlib
 BuildRequires:	expat-devel
-BuildRoot:	%{_tmppath}/%{name}-%{version}
 
 %description
 An ocaml wrapper for the Expat XML parsing library. It allows you to write
@@ -31,23 +30,18 @@ This package contains the development files needed to build applications
 using %{name}.
 
 %prep
-%setup -q -n %{name}-%{version}
+%setup -q
 
 %build
 %make depend
 %make all allopt
 
 %install
-rm -rf %{buildroot}
 install -d -m 755 %{buildroot}/%{_libdir}/ocaml/stublibs
 make install OCAMLFIND_DESTDIR="%{buildroot}%{_libdir}/ocaml"
 rm -f %{buildroot}/%{_libdir}/ocaml/stublibs/*.owner
 
-%clean
-rm -rf %{buildroot}
-
 %files
-%defattr(-,root,root)
 %doc LICENCE README doc
 %dir %{_libdir}/ocaml/expat
 %{_libdir}/ocaml/expat/*.cmi
@@ -56,7 +50,6 @@ rm -rf %{buildroot}
 %{_libdir}/ocaml/stublibs/*.so
 
 %files devel
-%defattr(-,root,root)
 %{_libdir}/ocaml/expat/*.a
 %{_libdir}/ocaml/expat/*.cmxa
 %{_libdir}/ocaml/expat/*.mli
