@@ -53,3 +53,54 @@ rm -f %{buildroot}/%{_libdir}/ocaml/stublibs/*.owner
 %{_libdir}/ocaml/expat/*.a
 %{_libdir}/ocaml/expat/*.cmxa
 %{_libdir}/ocaml/expat/*.mli
+
+
+%changelog
+* Wed Nov 02 2011 Per Øyvind Karlsen <peroyvind@mandriva.org> 0.9.1-10
++ Revision: 712298
+- rebuild against new ocaml version
+- cleanup
+
+* Sat Jun 27 2009 Guillaume Rousse <guillomovitch@mandriva.org> 0.9.1-9mdv2011.0
++ Revision: 389828
+- rebuild
+
+* Mon Dec 29 2008 Guillaume Rousse <guillomovitch@mandriva.org> 0.9.1-8mdv2009.1
++ Revision: 320722
+- move non-devel files in main package
+- site-lib hierarchy doesn't exist anymore
+
+  + Thierry Vignaud <tv@mandriva.org>
+    - rebuild
+
+* Tue Mar 04 2008 Guillaume Rousse <guillomovitch@mandriva.org> 0.9.1-5mdv2008.1
++ Revision: 178367
+- rebuild
+
+  + Olivier Blin <blino@mandriva.org>
+    - restore BuildRoot
+
+  + Thierry Vignaud <tv@mandriva.org>
+    - kill re-definition of %%buildroot on Pixel's request
+
+* Sat Sep 01 2007 Guillaume Rousse <guillomovitch@mandriva.org> 0.9.1-4mdv2008.0
++ Revision: 77677
+- drop macro definition, now in rpm-mandriva-setup
+  ship .cmi file in non-devel subpackage
+
+* Sat Jun 23 2007 Per Øyvind Karlsen <peroyvind@mandriva.org> 0.9.1-3mdv2008.0
++ Revision: 43341
+- build 'allopt' too
+
+* Tue Jun 19 2007 Per Øyvind Karlsen <peroyvind@mandriva.org> 0.9.1-2mdv2008.0
++ Revision: 41240
+- rebuild against new ocaml
+
+* Thu Apr 26 2007 Guillaume Rousse <guillomovitch@mandriva.org> 0.9.1-1mdv2008.0
++ Revision: 18421
+- Import ocaml-expat
+
+
+
+* Thu Apr 26 2007 Guillaume Rousse <guillomovitch@mandriva.org> 0.9.1-1mdv2008.0
+- first mdv release
