@@ -1,10 +1,10 @@
 %define name	ocaml-expat
 %define version	0.9.1
-%define release	%mkrel 9
+%define release	11
 
 Name:		ocaml-expat
 Version:	0.9.1
-Release:	10
+Release:	11
 Summary:	Ocaml wrapper for the Expat XML parsing library
 License:	GPL
 Group:		Development/Other
