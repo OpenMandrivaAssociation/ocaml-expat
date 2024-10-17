@@ -8,7 +8,7 @@ Release:	12
 Summary:	Ocaml wrapper for the Expat XML parsing library
 License:	GPL
 Group:		Development/Other
-URL:		http://www.xs4all.nl/~mmzeeman/ocaml
+URL:		https://www.xs4all.nl/~mmzeeman/ocaml
 Source0: 	http://www.xs4all.nl/~mmzeeman/ocaml/%{name}-%{version}.tar.bz2
 BuildRequires:	ocaml
 BuildRequires:  ocaml-findlib
