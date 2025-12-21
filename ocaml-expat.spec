@@ -10,6 +10,7 @@ License:	GPL
 Group:		Development/Other
 URL:		https://www.xs4all.nl/~mmzeeman/ocaml
 Source0: 	http://www.xs4all.nl/~mmzeeman/ocaml/%{name}-%{version}.tar.bz2
+BuildRequires:	make
 BuildRequires:	ocaml
 BuildRequires:  ocaml-findlib
 BuildRequires:	expat-devel
