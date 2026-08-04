@@ -4,7 +4,7 @@
 
 Name:		ocaml-expat
 Version:	0.9.1
-Release:	12
+Release:	13
 Summary:	Ocaml wrapper for the Expat XML parsing library
 License:	GPL
 Group:		Development/Other
