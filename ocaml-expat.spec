@@ -1,6 +1,6 @@
 Name:		ocaml-expat
 Version:	1.3.0
-Release:	3
+Release:	4
 Summary:	OCaml wrapper for the Expat XML parsing library
 License:	MIT
 Group:		Development/Other
@@ -59,7 +59,6 @@ rm -f %{buildroot}%{_libdir}/ocaml/stublibs/*.owner
 
 %files devel
 %{_libdir}/ocaml/expat/*.a
-%{_libdir}/ocaml/expat/*.cmx
 %{_libdir}/ocaml/expat/*.cmxa
-%{_libdir}/ocaml/expat/*.mli
 %{_libdir}/ocaml/expat/*.cmxs
+%{_libdir}/ocaml/expat/*.mli
